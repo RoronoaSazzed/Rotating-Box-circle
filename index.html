@@ -14,10 +14,15 @@
       }
 
       :root {
-        --distanceInBetween: 20px;
-        --animationDuration: 3s;
-        --boxRotateAxisX: 0deg;
-        --boxRotateAxisY: 65deg;
+        --distance-In-Between: 20px;
+        --animation-Duration: 3s;
+        --wrapper-color: #131313;
+        --box-Rotate-AxisX: 0deg;
+        --box-Rotate-AxisY: 65deg;
+        --border-Box-Color: white;
+        --box-Wrapper-Size: 400px;
+        --white-Box-Size: calc(var(--box-Wrapper-Size) / 1.6);
+        --delay-Than-Original: calc(var(--animation-Duration) / 2);
       }
 
       .parentDiv {
@@ -29,12 +34,12 @@
 
       .wrapper {
         position: relative;
-        background-color: #131313;
+        background-color: var(--wrapper-color);
         overflow: hidden;
         width: 100%;
-        max-width: 400px;
+        max-width: var(--box-Wrapper-Size);
         height: 100%;
-        max-height: 400px;
+        max-height: var(--box-Wrapper-Size);
         aspect-ratio: 1 / 1;
         transform-origin: center;
       }
@@ -44,16 +49,16 @@
         height: 100%;
         aspect-ratio: 1 / 1;
         position: absolute;
-        animation: wrapperInOut 3s linear infinite;
+        animation: wrapperInOut var(--animation-Duration) linear infinite;
       }
 
       @keyframes wrapperInOut {
         0% {
-          transform: translateY(200px);
+          transform: translateY(calc(var(--box-Wrapper-Size) / 2));
         }
 
         100% {
-          transform: translateY(-800px);
+          transform: translateY(calc(var(--box-Wrapper-Size) * -1 * 2));
         }
       }
 
@@ -62,30 +67,32 @@
         height: 100%;
         aspect-ratio: 1 / 1;
         position: absolute;
-        animation: wrapperInOut 3s linear 1.5s infinite;
+        animation: wrapperInOut var(--animation-Duration) linear
+          var(--delay-Than-Original) infinite;
       }
 
       .boxWrap1 {
-        height: 400px;
-        width: 400px;
+        height: var(--box-Wrapper-Size);
+        width: var(--box-Wrapper-Size);
         position: absolute;
         top: 50%;
         left: 0%;
         transform: rotateY(0deg);
         transform-style: preserve-3d;
-        animation: wrapperRotate 3s ease-out infinite;
+        animation: wrapperRotate var(--animation-Duration) ease-out infinite;
         position: relative;
       }
 
       .boxWrap2 {
-        height: 400px;
-        width: 400px;
+        height: var(--box-Wrapper-Size);
+        width: var(--box-Wrapper-Size);
         position: absolute;
         top: 50%;
         left: 0%;
         transform: rotateY(0deg);
         transform-style: preserve-3d;
-        animation: wrapperRotate 3s ease-out 1.5s infinite;
+        animation: wrapperRotate var(--animation-Duration) ease-out
+          var(--delay-Than-Original) infinite;
         position: relative;
       }
 
@@ -100,9 +107,9 @@
       }
 
       .box {
-        border: 1px solid white;
-        height: 250px;
-        width: 250px;
+        border: 1px solid var(--border-Box-Color);
+        height: var(--white-Box-Size);
+        width: var(--white-Box-Size);
         position: absolute;
         top: 50%;
         left: 0%;
@@ -110,105 +117,116 @@
         transform-style: preserve-3d;
       }
 
-      .b1 {
+      .bcb5 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -5))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir1 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * -5))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir1 var(--animation-Duration) infinite;
       }
-      .b2 {
+      .bcb4 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -4))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir2 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * -4))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir2 var(--animation-Duration) infinite;
       }
-      .b3 {
+      .bcb3 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -3))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir3 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * -3))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir3 var(--animation-Duration) infinite;
       }
-      .b4 {
+      .bcb2 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -2))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir4 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * -2))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir4 var(--animation-Duration) infinite;
       }
-      .b5 {
+      .bcb1 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -1))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir5 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * -1))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir5 var(--animation-Duration) infinite;
       }
-      .b6 {
+      .bcf {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 0))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir6 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 0))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir6 var(--animation-Duration) infinite;
       }
-      .b7 {
+      .bcf1 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 1))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir7 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 1))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir7 var(--animation-Duration) infinite;
       }
-      .b8 {
+      .bcf2 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 2))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir8 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 2))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir8 var(--animation-Duration) infinite;
       }
-      .b9 {
+      .bcf3 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 3))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir9 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 3))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir9 var(--animation-Duration) infinite;
       }
-      .b10 {
+      .bcf4 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 4))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir10 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 4))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir10 var(--animation-Duration) infinite;
       }
-      .b11 {
+      .bcf5 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 5))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir11 var(--animationDuration) infinite;
+          translateX(calc(var(--distance-In-Between) * 5))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir11 var(--animation-Duration) infinite;
       }
       @keyframes recToCir1 {
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 1))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 1))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 1))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 1))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 1))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 1))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.15);
         }
       }
@@ -216,24 +234,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 2))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 2))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 2))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 2))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 2))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 2))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.3);
         }
       }
@@ -241,24 +259,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 3))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 3))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 3))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 3))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 3))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 3))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.45);
         }
       }
@@ -266,24 +284,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 4))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 4))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 4))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 4))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 4))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 4))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.6);
         }
       }
@@ -291,24 +309,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 5))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 5))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 5))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 5))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 5))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 5))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.75);
         }
       }
@@ -316,24 +334,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 6))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 6))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 6))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 6))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 6))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 6))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.9);
         }
       }
@@ -341,24 +359,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 7))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 7))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 7))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 7))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 7))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 7))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.75);
         }
       }
@@ -366,24 +384,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 8))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 8))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 8))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 8))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 8))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 8))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.6);
         }
       }
@@ -391,24 +409,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 9))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 9))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 9))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 9))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 9))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 9))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.45);
         }
       }
@@ -416,24 +434,24 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 10))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 10))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 10))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 10))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 10))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 10))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.3);
         }
       }
@@ -441,104 +459,126 @@
         0% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 11))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 11))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         25% {
           border-radius: 0%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 11))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 11))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(1);
         }
 
         100% {
           border-radius: 50%;
           transform: perspective(1000px)
-            translateX(calc(var(--distanceInBetween) * 11))
-            rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY))
+            translateX(calc(var(--distance-In-Between) * 11))
+            rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
             scale(0.15);
         }
       }
 
-      #b1 {
+      #bcb5 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -5))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir1 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * -5))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir1 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b2 {
+      #bcb4 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -4))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir2 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * -4))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir2 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b3 {
+      #bcb3 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -3))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir3 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * -3))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir3 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b4 {
+      #bcb2 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -2))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir4 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * -2))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir4 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b5 {
+      #bcb1 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * -1))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir5 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * -1))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir5 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b6 {
+      #bcf {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 0))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir6 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 0))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir6 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b7 {
+      #bcf1 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 1))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir7 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 1))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir7 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b8 {
+      #bcf2 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 2))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir8 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 2))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir8 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b9 {
+      #bcf3 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 3))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir9 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 3))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir9 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b10 {
+      #bcf4 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 4))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir10 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 4))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir10 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
-      #b11 {
+      #bcf5 {
         transform-origin: center;
         transform: perspective(1000px)
-          translateX(calc(var(--distanceInBetween) * 5))
-          rotateX(var(--boxRotateAxisX)) rotateY(var(--boxRotateAxisY)) scale(1);
-        animation: recToCir11 var(--animationDuration) 1.5s infinite;
+          translateX(calc(var(--distance-In-Between) * 5))
+          rotateX(var(--box-Rotate-AxisX)) rotateY(var(--box-Rotate-AxisY))
+          scale(1);
+        animation: recToCir11 var(--animation-Duration)
+          var(--delay-Than-Original) infinite;
       }
     </style>
   </head>
@@ -548,33 +588,33 @@
         <div class="locomotive">
           <div class="firstOne">
             <div class="boxWrap1">
-              <div class="box b1"></div>
-              <div class="box b2"></div>
-              <div class="box b3"></div>
-              <div class="box b4"></div>
-              <div class="box b5"></div>
-              <div class="box b6"></div>
-              <div class="box b7"></div>
-              <div class="box b8"></div>
-              <div class="box b9"></div>
-              <div class="box b10"></div>
-              <div class="box b11"></div>
+              <div class="box bcb5"></div>
+              <div class="box bcb4"></div>
+              <div class="box bcb3"></div>
+              <div class="box bcb2"></div>
+              <div class="box bcb1"></div>
+              <div class="box bcf"></div>
+              <div class="box bcf1"></div>
+              <div class="box bcf2"></div>
+              <div class="box bcf3"></div>
+              <div class="box bcf4"></div>
+              <div class="box bcf5"></div>
             </div>
           </div>
 
           <div class="secondOne">
             <div class="boxWrap2">
-              <div class="box" id="b1"></div>
-              <div class="box" id="b2"></div>
-              <div class="box" id="b3"></div>
-              <div class="box" id="b4"></div>
-              <div class="box" id="b5"></div>
-              <div class="box" id="b6"></div>
-              <div class="box" id="b7"></div>
-              <div class="box" id="b8"></div>
-              <div class="box" id="b9"></div>
-              <div class="box" id="b10"></div>
-              <div class="box" id="b11"></div>
+              <div class="box" id="bcb5"></div>
+              <div class="box" id="bcb4"></div>
+              <div class="box" id="bcb3"></div>
+              <div class="box" id="bcb2"></div>
+              <div class="box" id="bcb1"></div>
+              <div class="box" id="bcf"></div>
+              <div class="box" id="bcf1"></div>
+              <div class="box" id="bcf2"></div>
+              <div class="box" id="bcf3"></div>
+              <div class="box" id="bcf4"></div>
+              <div class="box" id="bcf5"></div>
             </div>
           </div>
         </div>
